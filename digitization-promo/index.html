@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مشروع الرقمنة — موشن جرافيك</title>
+<style>
+@font-face{font-family:Cairo;font-weight:400;src:url(assets/fonts/cairo-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Cairo;font-weight:700;src:url(assets/fonts/cairo-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Cairo;font-weight:900;src:url(assets/fonts/cairo-arabic-900-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Cairo;font-weight:400;src:url(assets/fonts/cairo-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Cairo;font-weight:700;src:url(assets/fonts/cairo-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Cairo;font-weight:900;src:url(assets/fonts/cairo-latin-900-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Tajawal;font-weight:500;src:url(assets/fonts/tajawal-arabic-500-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Tajawal;font-weight:700;src:url(assets/fonts/tajawal-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Tajawal;font-weight:500;src:url(assets/fonts/tajawal-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:Tajawal;font-weight:700;src:url(assets/fonts/tajawal-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF}
+:root{--cream:#F3EFE7;--navy:#1E2A55;--red:#E8414A;--yellow:#F5B82E;--orange:#F08A2E;--teal:#1FA79A;--plum:#5A2A4A;--mag:#B0126E;--blue:#3D7BE0;--grey:#8A8FA3}
+html,body{margin:0;background:#111;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;background:var(--cream);overflow:hidden;font-family:Cairo,sans-serif;color:var(--navy)}
+.layer,.scene{position:absolute;inset:0;transform-origin:960px 540px}
+.scene{display:none}
+svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+.t{position:absolute;left:0;top:0;white-space:nowrap;will-change:transform}
+.h1{font-weight:900;font-size:92px;line-height:1.25}
+.h2{font-weight:700;font-size:58px;line-height:1.3}
+.lbl{font-family:Tajawal,Cairo;font-weight:700;font-size:44px}
+.chip{background:#fff;border-radius:60px;padding:14px 38px 14px 28px;box-shadow:8px 8px 0 rgba(30,42,85,.12);display:flex;align-items:center;gap:18px;font-family:Tajawal;font-weight:700;font-size:40px}
+.dot{width:54px;height:54px;border-radius:50%;display:inline-block;flex:none}
+.mask{overflow:hidden}
+.ltr{direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="bg"></svg>
+  <div id="s1" class="scene"><svg></svg>
+    <div class="t mask" id="s1txt" style="height:130px;width:1400px;text-align:center">
+      <div class="h1" id="s1w0" style="position:absolute;width:100%">أكوامٌ من الأوراق</div>
+      <div class="h1" id="s1w1" style="position:absolute;width:100%;color:var(--red)">ملفاتٌ ضائعة</div>
+      <div class="h1" id="s1w2" style="position:absolute;width:100%">ووقتٌ يضيع في البحث</div>
+    </div>
+  </div>
+  <div id="s2" class="scene"><svg></svg>
+    <div class="t h1" id="s2l1" style="font-size:96px">هل ما زالت مؤسستك</div>
+    <div class="t h1" id="s2l2" style="font-size:96px"><span>تعمل </span><span id="s2hl" style="position:relative;display:inline-block"><span id="s2bar" style="position:absolute;left:-14px;right:-14px;bottom:18px;height:40px;background:var(--yellow);transform-origin:right;z-index:-1"></span>بالطريقة القديمة؟</span></div>
+  </div>
+  <div id="s3" class="scene"><svg></svg>
+    <div class="t h1" id="s3title" style="font-size:132px">مشروع الرقمنة</div>
+    <div class="t h2" id="s3sub" style="color:var(--red)">من الورق… إلى منظومة رقمية ذكية</div>
+    <div class="t lbl" id="s3a" style="color:var(--grey)">أرشيف ورقي</div>
+    <div class="t lbl" id="s3b" style="color:var(--teal)">منظومة رقمية</div>
+  </div>
+  <div id="s4" class="scene"><svg></svg>
+    <div class="t h1" id="s4title">كيف نعمل؟</div>
+    <div class="t lbl" id="s4l0">مسحٌ ضوئي عالي الدقة</div>
+    <div class="t lbl" id="s4l1">فهرسةٌ ذكية</div>
+    <div class="t lbl" id="s4l2">حفظٌ في سحابة آمنة</div>
+  </div>
+  <div id="s5" class="scene"><svg></svg>
+    <div class="t h1" id="s5title" style="font-size:84px">ابحث عن أي ملف <span style="color:var(--red)">في ثوانٍ</span></div>
+    <div class="t" id="s5query" style="font-family:Tajawal;font-weight:700;font-size:38px;color:var(--navy)"></div>
+    <div class="t chip" id="s5found" style="font-size:32px"><span class="dot" style="background:var(--teal);width:40px;height:40px"></span>تم العثور على الملف في 0.3 ثانية</div>
+    <div class="t chip" id="s5any1" style="font-size:34px"><span class="dot" style="background:var(--blue);width:40px;height:40px"></span>من أي مكان</div>
+    <div class="t chip" id="s5any2" style="font-size:34px"><span class="dot" style="background:var(--orange);width:40px;height:40px"></span>وفي أي وقت</div>
+  </div>
+  <div id="s6" class="scene"><svg></svg>
+    <div class="t chip" id="s6c0"><span class="dot" style="background:var(--red)"></span>حمايةٌ متكاملة</div>
+    <div class="t chip" id="s6c1"><span class="dot" style="background:var(--yellow)"></span>صلاحياتٌ دقيقة</div>
+    <div class="t chip" id="s6c2"><span class="dot" style="background:var(--teal)"></span>نسخٌ احتياطي مستمر</div>
+  </div>
+  <div id="s7" class="scene"><svg></svg>
+    <div class="t h1" id="s7title" style="font-size:84px">وفّر <span style="color:var(--red)">الوقت</span> و<span style="color:var(--orange)">الجهد</span> و<span style="color:var(--teal)">التكاليف</span></div>
+    <div class="t" id="s7n0" style="font-weight:900;font-size:110px"><span class="ltr" id="s7v0">0%</span></div>
+    <div class="t" id="s7n1" style="font-weight:900;font-size:110px"><span class="ltr" id="s7v1">24/7</span></div>
+    <div class="t" id="s7n2" style="font-weight:900;font-size:110px"><span class="ltr" id="s7v2">1000</span></div>
+    <div class="t lbl" id="s7l0">أرشيفٌ رقمي</div>
+    <div class="t lbl" id="s7l1">وصولٌ دائم</div>
+    <div class="t lbl" id="s7l2">ورقةٌ مهدرة</div>
+    <div class="t h2" id="s7f" style="font-weight:900;font-size:70px;color:var(--plum)">انطلق نحو مستقبلٍ بلا ورق</div>
+  </div>
+  <div id="s8" class="scene"><svg></svg>
+    <div class="t h1" id="s8title" style="font-size:128px">مشروع الرقمنة</div>
+    <div class="t h2" id="s8tag" style="color:var(--mag);letter-spacing:0"></div>
+    <div class="t" id="s8contact" style="font-family:Tajawal;font-weight:700;font-size:34px;color:var(--grey);display:flex;gap:46px;align-items:center">
+      <span class="ltr">www.example.com</span><span style="width:3px;height:36px;background:#cfc9bb"></span><span class="ltr">+000 000 000 000</span>
+    </div>
+  </div>
+  <svg id="fx"></svg>
+</div>
+<script src="anim.js"></script>
+</body>
+</html>

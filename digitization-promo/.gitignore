@@ -1,0 +1,12 @@
+node_modules/
+tools/vits-piper-*/
+tools/*.tar.bz2
+tools/dl.log
+out/part_*.mp4
+out/parts.txt
+out/video_noaudio.mp4
+out/still_*
+out/sheet_*
+out/spec.png
+out/*.wav
+out/thumb_preview.jpg
